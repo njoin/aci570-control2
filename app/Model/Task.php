@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property TaskList $TaskList
  * @property Person $Person
+ * @property TaskTag $TaskTag
  */
 class Task extends AppModel {
 
@@ -61,6 +62,26 @@ class Task extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'completed' => array(
+			'boolean' => array(
+				'rule' => array('boolean'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'completed_on' => array(
+			'datetime' => array(
+				'rule' => array('datetime'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'created' => array(
 			'datetime' => array(
 				'rule' => array('datetime'),
@@ -106,4 +127,26 @@ class Task extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'TaskTag' => array(
+			'className' => 'TaskTag',
+			'foreignKey' => 'task_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

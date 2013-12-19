@@ -16,5 +16,7 @@
 		<li><?php echo $this->Html->link(__('List Projects'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Task Lists'), array('controller' => 'task_lists', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Task List'), array('controller' => 'task_lists', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

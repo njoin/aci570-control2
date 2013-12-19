@@ -1,12 +1,10 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Project Model
+ * Tag Model
  *
- * @property Person $Person
- * @property TaskList $TaskList
  */
-class Project extends AppModel {
+class Tag extends AppModel {
 
 /**
  * Display field
@@ -41,16 +39,6 @@ class Project extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'description' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'created' => array(
 			'datetime' => array(
 				'rule' => array('datetime'),
@@ -72,41 +60,4 @@ class Project extends AppModel {
 			),
 		),
 	);
-
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'Person' => array(
-			'className' => 'Person',
-			'foreignKey' => 'project_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'TaskList' => array(
-			'className' => 'TaskList',
-			'foreignKey' => 'project_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
 }

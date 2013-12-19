@@ -1,19 +1,19 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Project Model
+ * TaskTag Model
  *
- * @property Person $Person
- * @property TaskList $TaskList
+ * @property Task $Task
+ * @property Tag $Tag
  */
-class Project extends AppModel {
+class TaskTag extends AppModel {
 
 /**
  * Display field
  *
  * @var string
  */
-	public $displayField = 'name';
+	public $displayField = 'id';
 
 /**
  * Validation rules
@@ -31,9 +31,9 @@ class Project extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'name' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+		'task_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -41,9 +41,9 @@ class Project extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'description' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+		'tag_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -76,37 +76,24 @@ class Project extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasMany associations
+ * belongsTo associations
  *
  * @var array
  */
-	public $hasMany = array(
-		'Person' => array(
-			'className' => 'Person',
-			'foreignKey' => 'project_id',
-			'dependent' => false,
+	public $belongsTo = array(
+		'Task' => array(
+			'className' => 'Task',
+			'foreignKey' => 'task_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'order' => ''
 		),
-		'TaskList' => array(
-			'className' => 'TaskList',
-			'foreignKey' => 'project_id',
-			'dependent' => false,
+		'Tag' => array(
+			'className' => 'Tag',
+			'foreignKey' => 'tag_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'order' => ''
 		)
 	);
-
 }

@@ -6,6 +6,8 @@
 			<th><?php echo $this->Paginator->sort('task_list_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('person_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
+			<th><?php echo $this->Paginator->sort('completed'); ?></th>
+			<th><?php echo $this->Paginator->sort('completed_on'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -20,6 +22,8 @@
 			<?php echo $this->Html->link($task['Person']['name'], array('controller' => 'people', 'action' => 'view', $task['Person']['id'])); ?>
 		</td>
 		<td><?php echo h($task['Task']['description']); ?>&nbsp;</td>
+		<td><?php echo h($task['Task']['completed']); ?>&nbsp;</td>
+		<td><?php echo h($task['Task']['completed_on']); ?>&nbsp;</td>
 		<td><?php echo h($task['Task']['created']); ?>&nbsp;</td>
 		<td><?php echo h($task['Task']['modified']); ?>&nbsp;</td>
 		<td class="actions">
@@ -52,5 +56,7 @@
 		<li><?php echo $this->Html->link(__('New Task List'), array('controller' => 'task_lists', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List People'), array('controller' => 'people', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('controller' => 'people', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Task Tags'), array('controller' => 'task_tags', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Task Tag'), array('controller' => 'task_tags', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

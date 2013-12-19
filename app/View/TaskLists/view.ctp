@@ -50,6 +50,8 @@
 		<th><?php echo __('Task List Id'); ?></th>
 		<th><?php echo __('Person Id'); ?></th>
 		<th><?php echo __('Description'); ?></th>
+		<th><?php echo __('Completed'); ?></th>
+		<th><?php echo __('Completed On'); ?></th>
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
@@ -60,6 +62,8 @@
 			<td><?php echo $task['task_list_id']; ?></td>
 			<td><?php echo $task['person_id']; ?></td>
 			<td><?php echo $task['description']; ?></td>
+			<td><?php echo $task['completed']; ?></td>
+			<td><?php echo $task['completed_on']; ?></td>
 			<td><?php echo $task['created']; ?></td>
 			<td><?php echo $task['modified']; ?></td>
 			<td class="actions">
