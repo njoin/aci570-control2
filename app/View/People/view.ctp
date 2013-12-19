@@ -36,9 +36,10 @@
 		<li><?php echo $this->Html->link(__('List People'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Person'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Project'), array('controller' => 'projects', 'action' => 'add')); ?> <
 		<li><?php echo $this->Html->link(__('List Tasks'), array('controller' => 'tasks', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Task'), array('controller' => 'tasks', 'action' => 'add')); ?> </li>
+		
 	</ul>
 </div>
 <div class="related">
